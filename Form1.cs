@@ -12,7 +12,8 @@ namespace tabla_practicas_01
 {
     public partial class Form1 : Form
     {
-        int i = 0; 
+        int i = 0;
+        int fila;
         
         public Form1()
         {
@@ -47,6 +48,33 @@ namespace tabla_practicas_01
 
             buttonModificar.Enabled = false;
             buttonEliminar.Enabled = false;
+        }
+
+        private void tablaDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tablaDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Capturamos la fila seleccionada
+            fila = tablaDatos.CurrentRow.Index;
+
+            //Mostramos los datos de la fila seleccionada
+            textBoxProducto.Text = tablaDatos[1, fila].Value.ToString();
+            textBoxReferencia.Text = tablaDatos[2, fila].Value.ToString();
+            textBoxPrecio.Text = tablaDatos[3, fila].Value.ToString();
+
+            buttonModificar.Enabled = true;  //Habilitamos el botón modificar
+            buttonEliminar.Enabled = true;  //Habilitamos el botón eliminar
+            buttonAgregar.Enabled = false;  //Deshabilitamos el botón agregar
+        }
+
+        private void buttonNuevo_Click(object sender, EventArgs e)
+        {
+            limpiar(); //Limpia los campos de texto
+
+            buttonAgregar.Enabled = true;  //Habilitamos el botón agregar
         }
     }
 }

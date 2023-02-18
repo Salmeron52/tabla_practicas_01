@@ -141,6 +141,7 @@
             this.buttonNuevo.TabIndex = 9;
             this.buttonNuevo.Text = "Nuevo";
             this.buttonNuevo.UseVisualStyleBackColor = true;
+            this.buttonNuevo.Click += new System.EventHandler(this.buttonNuevo_Click);
             // 
             // tablaDatos
             // 
@@ -156,12 +157,15 @@
             this.tablaDatos.RowTemplate.Height = 24;
             this.tablaDatos.Size = new System.Drawing.Size(666, 259);
             this.tablaDatos.TabIndex = 10;
+            this.tablaDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaDatos_CellClick);
+            this.tablaDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaDatos_CellContentClick);
             // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Código";
             this.Codigo.MinimumWidth = 6;
             this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
             this.Codigo.Width = 125;
             // 
             // Producto
