@@ -13,7 +13,7 @@ namespace tabla_practicas_01
     public partial class Form1 : Form
     {
         int i = 0;
-        int fila;
+        int fila = -1; 
         
         public Form1()
         {
@@ -38,6 +38,9 @@ namespace tabla_practicas_01
             i += 1;
 
             limpiar(); //Limpia los campos de texto
+
+            //Llevamos el ratón al campo de texto del producto
+            textBoxProducto.Focus();
         }
 
         private void limpiar()
@@ -57,6 +60,12 @@ namespace tabla_practicas_01
 
         private void tablaDatos_CellClick(object sender, DataGridViewCellEventArgs e) //Evento que se ejecuta al hacer click en una celda
         {
+            //Si la fila seleccionada está vacía, no se ejecuta el evento  ¡¡ERROR ARREGLADO!!
+            if (tablaDatos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == null)
+            {
+                return;
+            }
+
             //Capturamos la fila seleccionada al hacer click en una celda
             fila = tablaDatos.CurrentRow.Index;
 
