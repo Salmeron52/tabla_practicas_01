@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace tabla_practicas_01
 {
@@ -106,6 +107,24 @@ namespace tabla_practicas_01
         {
             //Eliminamos una fila especifica
             tablaDatos.Rows.RemoveAt(fila);
+        }
+
+        private void buttonArchivar_Click(object sender, EventArgs e) //  ¡¡¡REPARAR NO FUNCIONA!!
+        {
+            //añadimos los datos de la tabla a un archivo de texto. Si no existe, lo creamos en C:\Users\manue\Documents
+            TextWriter escribir = new StreamWriter("tabla.txt", true);
+
+            //Recorremos la tabla y la guardamos en el archivo
+            for (int i = 0; i < tablaDatos.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < tablaDatos.Columns.Count; j++)
+                {
+                    escribir.Write(tablaDatos.Rows[i].Cells[j].Value.ToString() + " ");
+                }
+                escribir.WriteLine();
+            }
+
+            escribir.Close(); //Cerramos el archivo
         }
     }
 }

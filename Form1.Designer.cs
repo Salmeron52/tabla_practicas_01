@@ -43,6 +43,7 @@
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonArchivar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaDatos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -191,11 +192,23 @@
             this.Precio.Name = "Precio";
             this.Precio.Width = 125;
             // 
+            // buttonArchivar
+            // 
+            this.buttonArchivar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonArchivar.Location = new System.Drawing.Point(86, 185);
+            this.buttonArchivar.Name = "buttonArchivar";
+            this.buttonArchivar.Size = new System.Drawing.Size(156, 38);
+            this.buttonArchivar.TabIndex = 11;
+            this.buttonArchivar.Text = "Archivar";
+            this.buttonArchivar.UseVisualStyleBackColor = true;
+            this.buttonArchivar.Click += new System.EventHandler(this.buttonArchivar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 522);
+            this.Controls.Add(this.buttonArchivar);
             this.Controls.Add(this.tablaDatos);
             this.Controls.Add(this.buttonNuevo);
             this.Controls.Add(this.buttonEliminar);
@@ -232,6 +245,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Referencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.Button buttonArchivar;
     }
 }
 
