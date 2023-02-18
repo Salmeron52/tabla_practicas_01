@@ -76,5 +76,27 @@ namespace tabla_practicas_01
 
             buttonAgregar.Enabled = true;  //Habilitamos el botón agregar
         }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            string producto, referencia, precio;
+
+            producto = textBoxProducto.Text;
+            referencia = textBoxReferencia.Text;
+            precio = textBoxPrecio.Text;
+
+            tablaDatos[1, fila].Value = producto;
+            tablaDatos[2, fila].Value = referencia;
+            tablaDatos[3, fila].Value = precio;
+
+            limpiar(); //Limpia los campos de texto
+            
+        }
+
+        private void buttonEliminar_Click(object sender, EventArgs e)
+        {
+            //Eliminamos una fila especifica
+            tablaDatos.Rows.RemoveAt(fila);
+        }
     }
 }
