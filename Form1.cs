@@ -55,9 +55,9 @@ namespace tabla_practicas_01
 
         }
 
-        private void tablaDatos_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaDatos_CellClick(object sender, DataGridViewCellEventArgs e) //Evento que se ejecuta al hacer click en una celda
         {
-            //Capturamos la fila seleccionada
+            //Capturamos la fila seleccionada al hacer click en una celda
             fila = tablaDatos.CurrentRow.Index;
 
             //Mostramos los datos de la fila seleccionada
